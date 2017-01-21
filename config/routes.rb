@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   # for registrations, look at user/registrations controller first, then devise
   devise_for :users, :controllers => { :registrations => "user/registrations" }
   resources :user_stocks, except: [:show, :edit, :update]
+  resources :users, only: [:show]
+  resources :friendships
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
